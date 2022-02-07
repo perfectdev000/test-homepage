@@ -1,32 +1,33 @@
 ! function(t) {
-	var e = {};
+		var e = {};
 
-	function i(r) {
-		if (e[r]) return e[r].exports;
-		var n = e[r] = {
-			i: r,
-			l: !1,
-			exports: {}
-		};
-		return t[r].call(n.exports, n, n.exports, i), n.l = !0, n.exports
+		function i(r) {
+			if (e[r]) return e[r].exports;
+			var n = e[r] = {
+				i: r,
+				l: !1,
+				exports: {}
+			};
+			return t[r].call(n.exports, n, n.exports, i), n.l = !0, n.exports
+		}
+		i.m = t, i.c = e, i.d = function(t, e, r) {
+			i.o(t, e) || Object.defineProperty(t, e, {
+				configurable: !1,
+				enumerable: !0,
+				get: r
+			})
+		}, i.n = function(t) {
+			var e = t && t.__esModule ? function() {
+				return t.default
+			} : function() {
+				return t
+			};
+			return i.d(e, "a", e), e
+		}, i.o = function(t, e) {
+			return Object.prototype.hasOwnProperty.call(t, e)
+		}, i.p = "themes", i(i.s = 33)
 	}
-	i.m = t, i.c = e, i.d = function(t, e, r) {
-		i.o(t, e) || Object.defineProperty(t, e, {
-			configurable: !1,
-			enumerable: !0,
-			get: r
-		})
-	}, i.n = function(t) {
-		var e = t && t.__esModule ? function() {
-			return t.default
-		} : function() {
-			return t
-		};
-		return i.d(e, "a", e), e
-	}, i.o = function(t, e) {
-		return Object.prototype.hasOwnProperty.call(t, e)
-	}, i.p = "/app/themes/haritos/dist/", i(i.s = 33)
-}([function(t, e, i) {
+([function(t, e, i) {
 	"use strict";
 	i.d(e, "a", function() {
 		return s
@@ -9166,7 +9167,12 @@
 		l = i(2);
 	o.a.registerPlugin(s.a, a.a);
 	var u = function(t) {
-		this.el = t.get(0), this.canvas = document.getElementById("canvas"), this.main = document.getElementById("main"), this.planeElement = this.el.querySelector(".hero-fixed__plane"), this.avail = this.el.querySelector(".hero-fixed__availability"), this.mouse = {
+		this.el = t.get(0), 
+		this.canvas = document.getElementById("canvas"), 
+		this.main = document.getElementById("main"), 
+		this.planeElement = this.el.querySelector(".hero-fixed__plane"), 
+		this.avail = this.el.querySelector(".hero-fixed__availability"), 
+		this.mouse = {
 			x: 0,
 			y: 0
 		}, this.lastPosition = {
@@ -9269,7 +9275,7 @@
 		o.a.ticker.add(this.render), this.main.classList.add("is-blend"), this.tl.restart(), this.bindEvents(), setTimeout(function() {
 			l.a.gl.curtains.resize(), l.a.SmoothScroll.asscroll.resize(), window.dispatchEvent(new Event("resize"))
 		}, 500), o.a.to(this.canvas, {
-			backgroundColor: "rgba(0, 0, 0, 0)",
+			backgroundColor: "rgba(253, 126, 20, 0.3)",
 			duration: .5,
 			ease: "power1",
 			onStart: function() {
@@ -9486,7 +9492,7 @@
 		}, 0)
 	}, l.prototype.onVisible = function() {
 		o.a.ticker.add(this.render), a.a.isFromFooter = !0, o.a.to(this.canvas, {
-			backgroundColor: "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgba(0, 0, 40, 1)",
 			duration: .5,
 			ease: "power1",
 			onStart: function() {
@@ -9495,7 +9501,7 @@
 		}), this.bindEvents(), this.tl.restart()
 	}, l.prototype.onHidden = function() {
 		o.a.ticker.remove(this.render), this.heroFixed.length || o.a.to(this.canvas, {
-			backgroundColor: "rgba(0, 0, 0, 0)",
+			backgroundColor: "rgba(0, 0, 40, 0)",
 			duration: .5,
 			ease: "power1",
 			onStart: function() {
